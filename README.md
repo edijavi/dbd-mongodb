@@ -1,4 +1,4 @@
-# Platzi Mongo
+# DBD Mongo DB
 All the code is contened at db.py
 
 # Postman
@@ -21,14 +21,16 @@ conda activate platzi-mongo
 conda deactivate
 ```
 ## Install dependencies of the project
-With the enviroment enable, install the requirements with the comand below:
+With active environment, install the requirements with the command below:
 ```
 pip install -r requirements.txt
 ```
 ## Environment variables necessary to execute the project
 Asegurate de reemplazar el valor de PLATZI_DB_URI por la URI de tu cluster en MongoDB Atlas
 Make sure to replace with your project values mongodb+srv://userMongoDB:passworMongoDB@clusterName-xxxx.mongodb.net 
-***The user, password and cluster URL can be found in the MongoDb Atlas Dashboard
+```
+The user, password and cluster URL can be found in the MongoDb Atlas Dashboard
+```
 ```
 MacOS/Linux
 export FLASK_APP=platzi-api
@@ -41,7 +43,7 @@ set FLASK_ENV=development
 set PLATZI_DB_URI=mongodb+srv://userMongoDB:passworMongoDB@clusterName-xxxx.mongodb.net
 ```
 
-## Init the server to platzi-mongo project
+## Init the server for dbd-mongodb project
 ```
 flask run
 ```
