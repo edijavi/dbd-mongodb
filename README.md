@@ -26,8 +26,8 @@ With active environment, install the requirements with the command below:
 pip install -r requirements.txt
 ```
 ## Environment variables necessary to execute the project
-Asegurate de reemplazar el valor de PLATZI_DB_URI por la URI de tu cluster en MongoDB Atlas
-Make sure to replace with your project values mongodb+srv://userMongoDB:passworMongoDB@clusterName-xxxx.mongodb.net 
+After install the requirements.txt run the comands below with your project details.
+Make sure to complete the correct values in mongodb+srv://userMongoDB:passworMongoDB@clusterName-xxxx.mongodb.net 
 ```
 The user, password and cluster URL can be found in the MongoDb Atlas Dashboard
 ```
