@@ -22,7 +22,7 @@ def test_connection():
 def collection_stats(collection_nombre):
     return dumps(db.command('collstats', collection_nombre))
 
-# -----------------Degree-------------------------
+# -----------------Degrees-------------------------
 
 
 def crear_carrera(json):
@@ -34,7 +34,7 @@ def consultar_carrera_por_id(carrera_id):
 
 
 def actualizar_carrera(carrera):
-    # Esta funcion solamente actualiza nombre y descripcion de la carrera
+    # This function updates the name and description Degrees "Carreras"
     return str(db.carreras.update_one({'_id': ObjectId(carrera['_id'])}, {'$set': {'nombre': carrera['nombre'], 'descripcion': carrera['descripcion']}}).modified_count)
 
 
@@ -42,7 +42,7 @@ def borrar_carrera_por_id(carrera_id):
     return str(db.carreras.delete_one({'_id':ObjectId(carrera_id)}))
 
 
-# Clase de operadores
+# Operators Class
 def consultar_carreras(skip, limit):
     return dumps(db.carreras.find({}).skip(int(skip)).limit(int(limit)))
 
@@ -55,7 +55,7 @@ def agregar_curso(json):
 def borrar_curso_de_carrera(json):
     return str(db.carreras.update_one({'_id': ObjectId(json['id_carrera'])}, {'$pull': {'cursos':{'_id': ObjectId(json['id_curso'])}}}).modified_count)
 
-# -----------------Cursos-------------------------
+# -----------------Courses-------------------------
 
 
 def crear_curso(json):
@@ -67,7 +67,7 @@ def consultar_curso_por_id(id_curso):
 
 
 def actualizar_curso(curso):
-    # Esta funcion solamente actualiza nombre, descripcion y clases del curso
+    # This function updates the name, description and classes of each course.
     return str(db.cursos.update_one({'_id': ObjectId(curso['_id'])}, {'$set':{'nombre':curso['nombre'], 'descripcion':curso['descripcion'],'clases':curso['clases']}}).modified_count)
 
 
@@ -77,8 +77,4 @@ def borrar_curso_por_id(curso_id):
 
 def consultar_curso_por_id_proyeccion(id_curso, proyeccion=None):
     return db.cursos.find_one({'_id': ObjectId(id_curso)}, proyeccion)
-
-
-def consultar_curso_por_nombre(nombre):
-    return str('Falta por implementar')
 
